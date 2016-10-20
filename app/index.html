@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular ES6 Sample</title>
+  <link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="libs/bootstrap.min.css"</link>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="libs/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="head" ng-if="tju">
+	  <dir1></dir1>
+	</div>
+	<div class="mid">
+
+	  	<div class="col-md-2 left" ng-if="tju">
+				<dir3></dir3>
+			</div>
+
+			<div class="col-md-9 right">
+				<div class="col-md-11 col-md-offset-1">
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+
+	<div class="foot" ng-if="tju">
+	  <dir2></dir2>
+	</div>
+	<script src="libs/angular.js"></script>
+	<script src="libs/angular-route.min.js"></script>
+	<script src="libs/ngStorage.js"></script>
+	<script src="app.min.js"></script>
+</body>
+</html>

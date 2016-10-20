@@ -1,0 +1,65 @@
+<div class="row" ng-dblclick="dc.double()">
+  <div class="col-md-1 col-md-offset-12">
+  <button ng-click="dc.logout()" class="btn btn-danger btn-sm">
+        <span class="glyphicon glyphicon-triangle-bottom" style="color:white;"></span>
+    LOG OUT</button>
+  </div>
+      <button class="btn" ng-click="dc.select()" ng-if="check">{{!dc.sel() && "Select All" || "Unselect All"}}</button>
+      <button class="btn" ng-click="dc.deletebox()" ng-if="check" ng-disabled="dc.but()">DeleteMultiple</button>
+      <button class="btn" ng-click="dc.cancel()" ng-if="check" ng-disabled="dc.but()">Cancel</button>
+      <table border=2 cellpadding="8" class="table table-hover">
+        <tr style="text-decoration:underline; color:black;">
+          <th ng-if="check">
+            CHECK
+          </th>
+          <th>
+            CID
+          </th>
+          <th>
+            First Name
+          </th>
+          <th>
+            Last Name
+          </th>
+          <th>
+            Gender
+          </th>
+          <th>
+            Designation
+          </th>
+          <th>
+            Place
+          </th>
+        </tr>
+        <tr ng-repeat="x in result" ng-click="dc.check($index)">
+          <td ng-if="check">
+            <input type="checkbox" ng-checked="box[$index]" ng-if="check"/>
+          </td>
+          <td>
+            {{x.cid}}
+          </td>
+          <td>
+            {{x.first_name}}
+          </td>
+          <td>
+            {{x.last_name}}
+          </td>
+          <td>
+            {{x.gender}}
+          </td>
+          <td>
+            {{x.designation}}
+          </td>
+          <td>
+            {{x.description}}
+          </td>
+          <td>
+            <button class="btn btn-primary" ng-click="dc.deleteobj(x.cid)" ng-disabled="!box[$index]">DELETE</button>
+          </td>
+          <td>
+            <a ng-click="dc.update()" href="#/updateobj/{{x.cid}}">UPDATE</a>
+          </td>
+        </tr>
+      </table><br />
+      <button ng-click="dc.insert()" class="btn btn-info">{{loading}}</button><=CLICK HERE
+</div>

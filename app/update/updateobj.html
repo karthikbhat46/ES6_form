@@ -1,0 +1,55 @@
+<form name="form" class="star">
+<div class="wrapper1">
+	  <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+
+              <div class="col-xs-6 col-md-4 k1">
+                <label class="label" style="font-size:16px; color: darkblue;">FirstName:</label>
+								<input type="text" name="fname" ng-model="detobj.first_name"
+								class="form-control input-lg" placeholder="First Name" ng-pattern="/^[a-zA-Z\s]*$/" required/>
+								<span ng-show="form.fname.$error.pattern">Only characters</span>
+              </div>
+
+              <div class="col-xs-6 col-md-4 k1">
+              <label class="label" style="font-size:16px; color: darkblue;">LastName:</label>
+								<input type="text" name="lname" ng-model="detobj.last_name"
+								class="form-control input-lg" placeholder="Last Name" ng-pattern="/^[a-zA-Z\s]*$/" required/>
+								<span ng-show="form.lname.$error.pattern">Only characters</span>
+              </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-8 k2">
+            <br />
+						<label class="label" style="font-size:16px; color: darkblue;">Gender:</label>
+						<input type="radio" ng-model="detobj.gender" value="MALE" name="gender" required />Male
+    				<input type="radio" ng-model="detobj.gender" value="FEMALE" name="gender" required/>Female<br />
+
+            <br />
+						<label class="label" style="font-size:16px; color: darkblue;">Designation:</label>
+						<input type="text" name="desig" ng-model="detobj.designation" class="form-control input-lg"
+						placeholder="Designation" ng-pattern="/^[a-zA-Z.]*$/" required />
+						<span ng-show="form.desig.$error.pattern">Only characters are allowed</span>
+
+            <br />
+						<label class="label" style="font-size:16px; color: darkblue;">Description:</label>
+						<input type="text" name="descrip" ng-model="detobj.description" class="form-control input-lg"
+						placeholder="Description" ng-pattern="/^[a-zA-Z]*$/" required />
+						<span ng-show="form.descrip.$error.pattern">Only characters are allowed</span>
+          </div>
+        </div>
+
+          <br />
+
+          <div class="col-xs-6 col-md-5 kar">
+            <br />
+          <button ng-click="uc.updat()" ng-if="flag" class="btn btn-success btn-md update" ng-disabled="form.$invalid">UPDATE</button>
+          <button ng-click="uc.insert()" ng-if="!flag" class="btn btn-success btn-md insert" ng-disabled="form.$invalid">INSERT</button>
+        </div>
+        </form>
+      </div>
+</div>
+</div>
+</div>
+</form>
